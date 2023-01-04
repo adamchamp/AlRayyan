@@ -1,26 +1,20 @@
 import React from 'react';
-
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import{LogoHeader} from './components/LogoHeader';
 import{AnnouncementCard} from './components/AnnouncementCard';
 import{DonateCard} from './components/DonateCard';
 import{EventCard} from './components/EventCard';
-
+import {colors} from './config/theme';
 
 
 export default function App()
 {
+	const theme = {mode: "light"};
+	let activeColors = colors[theme.mode];
 	return (
-			<View style={styles.container}>
+			<LogoHeader/>
 
-				<Text>Text here</Text>
-				<DonateCard title="Title" hadith="hadith" translation="translation"/>
-
-
-
-				<StatusBar style="auto" />
-			</View>
 			);
 }
 
@@ -28,7 +22,6 @@ export default function App()
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		backgroundColor: '#fff',
 		alignItems: 'center',
 		justifyContent: 'center',
 	},

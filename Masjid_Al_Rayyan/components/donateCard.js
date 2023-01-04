@@ -1,19 +1,23 @@
 import React from "react";
 import {View, Image, StyleSheet, Text, TouchableOpacity} from 'react-native';
 
+import {colors} from '../config/theme';
+
 
 export const DonateCard = ({title, hadith, translation}) => {
+	const theme = {mode: "light"};
+	let activeColors = colors[theme.mode];
 
 	return (
-			<View style = {styles.donationsCardContainer}>
-				<Text style = {styles.title}>{title}</Text>
+			<View style={[{backgroundColor: activeColors.primary}, styles.donationsCardContainer]}>
+				<Text style={[{color: activeColors.white}, styles.title]}>{title}</Text>
 				<View style = {styles.textContainer}>
-					<Text style = {styles.contentText}>{hadith}</Text>
-					<Text style = {styles.contentText}>{translation}</Text>
+					<Text style={[{color: activeColors.white}, styles.contentText]}>{hadith}</Text>
+					<Text style={[{color: activeColors.white}, styles.contentText]}>{translation}</Text>
 				</View>
 
-				<TouchableOpacity  style = {styles.donationButton}>
-					<Text style = {styles.donationButtonText}>Donate</Text>
+				<TouchableOpacity  style={[{backgroundColor: activeColors.white}, styles.donationButton]}>
+					<Text style={[{color: activeColors.primary}, styles.donationButtonText]}>Donate</Text>
 				</TouchableOpacity>
 
 			</View>
@@ -33,17 +37,14 @@ const styles = StyleSheet.create({
 		paddingBottom: 30,
 		paddingLeft: 15,
 		paddingRight: 15,
-		borderRadius: 30,
-		backgroundColor: '#3365a6'
+		borderRadius: 30
 	},
 	contentText: {
-		color: '#ffffff',
 		fontSize: 17,
 		textAlign: 'center',
 		whiteSpace: 'nowrap'
 	},
 	title: {
-		color: '#ffffff',
 		fontSize: 28,
 		textAlign: 'center'
 
@@ -70,11 +71,9 @@ const styles = StyleSheet.create({
 		borderWidth: 0,
 		borderRadius: 30,
 		boxSizing: 'content-box',
-		backgroundColor: '#ffffff',
 		overflow: 'hidden',
 	},
 	donationButtonText: {
-		color: '#3365a6',
 		fontSize: 16,
 		textAlign: 'center'
 	}

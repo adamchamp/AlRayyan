@@ -1,15 +1,19 @@
 import React from "react";
 import {View, Image, StyleSheet, Text} from 'react-native';
 
+import {colors} from '../config/theme';
 
 
 export const AnnouncementCard = ({title, description}) => {
+	const theme = {mode: "light"};
+	let activeColors = colors[theme.mode];
+
 	return (
-			<View style={styles.AnnouncementCardContainer}>
+			<View style={[{backgroundColor: activeColors.primary}, styles.AnnouncementCardContainer]}>
 				<Image style={styles.announcementIcon} source = {require('../assets/announcementIcon.png')}/>
 				<View style={styles.textGroup}>
-					<Text style={styles.title}>{title}</Text>
-					<Text style={styles.description}>{description}</Text>
+					<Text style={[{color: activeColors.white}, styles.title]}>{title}</Text>
+					<Text style={[{color: activeColors.white}, styles.description]}>{description}</Text>
 				</View>
 			</View>
 			);
@@ -29,8 +33,7 @@ const styles = StyleSheet.create({
 		paddingBottom: 20,
 		paddingRight: 30,
 		paddingLeft: 30,
-		borderRadius: 30,
-		backgroundColor: '#3365a6'
+		borderRadius: 30
 	},
 
 	announcementIcon: {
@@ -50,7 +53,6 @@ const styles = StyleSheet.create({
 
 	title: {
 		alignSelf: 'flex-start',
-		color: '#ffffff',
 		fontSize: 22,
 		textAlign: 'center',
 		whiteSpace: 'nowrap'
@@ -58,7 +60,6 @@ const styles = StyleSheet.create({
 	},
 
 	description: {
-		color: '#ffffff',
 		fontSize: 13,
 		textAlign: 'center',
 		whiteSpace: 'nowrap'

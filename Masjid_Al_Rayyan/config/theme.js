@@ -4,23 +4,23 @@ export const colors = {
 				primary: "#3365A6", //50 and 80
 				secondary: "#2899D3",
 				tritanary: "#FFBD11",
-				whiteColor: "#FFFFFF", //80
-				blackColor: "#000000",
+				white: "#FFFFFF", //80
+				background: "#FFFFFF"
+
 			},
 
 	dark:
 			{
-				primary: "#3365A6",
+				primary: "#476081", //50 and 80
 				secondary: "#2899D3",
 				tritanary: "#FFBD11",
-				whiteColor: "#FFFFFF",
-				blackColor: "#000000",
+				white: "#FFFFFF", //80
+				background: "#1B1D22"
 			},
 
-	primary: "#3365A6",
+	primary: "#3365A6", //50 and 80
 	secondary: "#2899D3",
 	tritanary: "#FFBD11",
-	whiteColor: "#FFFFFF",
-	blackColor: "#000000",
-}
-;
+	white: "#FFFFFF", //80
+	background: "#FFFFFF"
+};

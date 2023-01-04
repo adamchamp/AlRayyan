@@ -1,19 +1,23 @@
 import React from "react";
 import {View, Image, StyleSheet, Text} from 'react-native';
 
+import {colors} from '../config/theme';
 
 
-export const EventCard = ({title, time, location, host}
-) => {
+
+export const EventCard = ({title, time, location, host}) => {
+	const theme = {mode: "light"};
+	let activeColors = colors[theme.mode];
+
 	return (
-			<View style={styles.EventsCardContainer}>
+			<View style={[{backgroundColor: activeColors.primary}, styles.EventsCardContainer]}>
 				<Image style = {styles.ImageEventsCard} source = {require('../assets/eventsImage.png')}/>
 				<View style = {styles.textGroup}>
-					<Text style = {styles.title}>{title}</Text>
+					<Text style={[{color: activeColors.white}, styles.title]}>{title}</Text>
 					<View style = {styles.contentGroup}>
-						<Text style = {styles.contentText}>{time}</Text>
-						<Text style = {styles.contentText}>{location}</Text>
-						<Text style = {styles.contentText}>{host}</Text>
+						<Text style={[{color: activeColors.white}, styles.contentText]}>{time}</Text>
+						<Text style={[{color: activeColors.white}, styles.contentText]}>{location}</Text>
+						<Text style={[{color: activeColors.white}, styles.contentText]}>{host}</Text>
 					</View>
 				</View>
 			</View>
@@ -30,7 +34,6 @@ const styles = StyleSheet.create({
 		justifyContent: 'flex-start',
 		alignItems: 'center',
 		borderRadius: 30,
-		backgroundColor: '#3365a6',
 		paddingRight: 20
 	},
 	textGroup: {
@@ -43,7 +46,6 @@ const styles = StyleSheet.create({
 
 	},
 	title: {
-		color: '#ffffff',
 		fontSize: 22,
 		textAlign: 'center',
 		whiteSpace: 'nowrap'
@@ -56,7 +58,6 @@ const styles = StyleSheet.create({
 		paddingLeft: 20
 	},
 	contentText: {
-		color: '#ffffff',
 		fontSize: 13,
 		whiteSpace: 'nowrap'
 
