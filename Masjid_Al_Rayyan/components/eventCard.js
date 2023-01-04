@@ -1,70 +1,68 @@
 import React from "react";
-import styled from "styled-components";
-
-
-const EventsCardContainer = styled.div`
-  width: 100.1%;
-  gap: 20px;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  border-radius: 30px;
-  background-color: #3365a6;
-`;
-
-const contentText = styled.div`
-  color: #ffffff;
-  font-size: 13px;
-  font-weight: 600;
-  font-family: Poppins;
-  text-align: center;
-  white-space: nowrap;
-`;
-
-const ImageEventsCard = styled.img`
-  width: 53.6%;
-  align-self: stretch;
-`;
-const contentGroup = styled.div`
-  gap: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`;
-const title = styled.div`
-  color: #ffffff;
-  font-size: 22px;
-  font-weight: 700;
-  font-family: Poppins;
-  text-align: center;
-  white-space: nowrap;
-`;
-const textGroup = styled.div`
-  height: 70px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
-`;
+import {View, Image, StyleSheet, Text} from 'react-native';
 
 
 
-export const EventsCard = ({}
+export const EventCard = ({}
 ) => {
 	return (
-			<EventsCardContainer>
-				<ImageEventsCard src={`https://file.rendit.io/n/NuOEratdwblGS1SssB0y.png`}/>
-				<textGroup>
-					<title>Title</title>
-					<contentGroup>
-						<contentText>Time of the event</contentText>
-						<contentText>Location of the event</contentText>
-						<contentText>Host for the event</contentText>
-					</contentGroup>
-				</textGroup>
-			</EventsCardContainer>
+			<View style={styles.EventsCardContainer}>
+				<Image style = {styles.ImageEventsCard} source = {require('../assets/Eventsimage.png')}/>
+				<View style = {styles.textGroup}>
+					<Text style = {styles.title}>Title</Text>
+					<View style = {styles.contentGroup}>
+						<Text style = {styles.contentText}>Time of the event</Text>
+						<Text style = {styles.contentText}>Location of the event</Text>
+						<Text style = {styles.contentText}>Host for the event</Text>
+					</View>
+				</View>
+			</View>
 			);
-};
+}
+
+
+const styles = StyleSheet.create({
+	EventsCardContainer: {
+		width: '100.1%',
+		gap: 20,
+		display: 'flex',
+		flexDirection: 'row',
+		justifyContent: 'flex-start',
+		alignItems: 'center',
+		borderRadius: 30,
+		backgroundColor: '#3365a6'
+	},
+	textGroup: {
+		height: 70,
+		display: 'flex',
+		flexDirection: 'column',
+		justifyContent: 'space-between',
+		alignItems: 'flex-start'
+
+	},
+	title: {
+		color: '#ffffff',
+		fontSize: 22,
+		textAlign: 'center',
+		whiteSpace: 'nowrap'
+	},
+	contentGroup: {
+		gap: 20,
+		display: 'flex',
+		flexDirection: 'column',
+		justifyContent: 'center',
+		alignItems: 'center'
+	},
+	contentText: {
+		color: '#ffffff',
+		fontSize: 13,
+		textAlign: 'center',
+		whiteSpace: 'nowrap'
+
+	},
+	ImageEventsCard: {
+		width: '53.6%',
+		alignSelf: 'stretch'
+	}
+});
 

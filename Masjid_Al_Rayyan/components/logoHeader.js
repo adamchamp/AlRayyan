@@ -1,32 +1,41 @@
 import React from "react";
-import styled from "styled-components/native";
-import { Text, View, Image} from 'react-native';
+import {View, Image, StyleSheet} from 'react-native';
 
 
-const LogoIcon = styled.img
-		`
-   ;
-`;
-const LogoName = styled.img
-		`
-   ;
-`;
-const logoHeaderConatiner = styled.div
-		`
-  gap: 0px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 17.05% 0px 7.58% 0px;
-`;
 
-
-export const logoHeader = ({}) => {
+export const LogoHeader = ({}) => {
 	return (
-			<logoHeaderConatiner>
-				<LogoIcon src={'../assets/logoImage.png'} />
-				<logoName src={'../assets/logoText.png'} />
-			</logoHeaderConatiner>
+			<View style={styles.container}>
+				<Image style={styles.logoImage} source = {require('../assets/logoImage.png')}/>
+				<Image style={styles.logoText} source = {require('../assets/logoText.jpg')}/>
+			</View>
 			);
-};
+}
+
+
+
+const styles = StyleSheet.create({
+	container: {
+		gap: 0,
+		display: 'flex',
+		flexDirection: 'row',
+		justifyContent: 'center',
+		alignItems: 'center',
+		paddingTop: 45,
+		paddingBottom: 20,
+		paddingRight: 30,
+		paddingLeft: 20
+	},
+
+	logoImage: {
+		width: 49,
+		height: 47
+
+	},
+
+	logoText: {
+		width: 155,
+		height: 47
+
+	}
+});
