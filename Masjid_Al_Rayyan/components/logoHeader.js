@@ -7,7 +7,7 @@ export const LogoHeader = ({}) => {
 	return (
 			<View style={styles.container}>
 				<Image style={styles.logoImage} source = {require('../assets/logoImage.png')}/>
-				<Image style={styles.logoText} source = {require('../assets/logoText.jpg')}/>
+				<Image style={styles.logoText} source = {require('../assets/logoText.png')}/>
 			</View>
 			);
 }
@@ -16,7 +16,6 @@ export const LogoHeader = ({}) => {
 
 const styles = StyleSheet.create({
 	container: {
-		gap: 0,
 		display: 'flex',
 		flexDirection: 'row',
 		justifyContent: 'center',

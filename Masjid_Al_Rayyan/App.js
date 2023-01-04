@@ -5,6 +5,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import{LogoHeader} from './components/LogoHeader';
 import{AnnouncementCard} from './components/AnnouncementCard';
 import{DonateCard} from './components/DonateCard';
+import{EventCard} from './components/EventCard';
 
 
 
@@ -14,8 +15,7 @@ export default function App()
 			<View style={styles.container}>
 
 				<Text>Text here</Text>
-				<DonateCard/>
-
+				<DonateCard title="Title" hadith="hadith" translation="translation"/>
 
 
 

@@ -3,17 +3,17 @@ import {View, Image, StyleSheet, Text} from 'react-native';
 
 
 
-export const EventCard = ({}
+export const EventCard = ({title, time, location, host}
 ) => {
 	return (
 			<View style={styles.EventsCardContainer}>
-				<Image style = {styles.ImageEventsCard} source = {require('../assets/Eventsimage.png')}/>
+				<Image style = {styles.ImageEventsCard} source = {require('../assets/eventsImage.png')}/>
 				<View style = {styles.textGroup}>
-					<Text style = {styles.title}>Title</Text>
+					<Text style = {styles.title}>{title}</Text>
 					<View style = {styles.contentGroup}>
-						<Text style = {styles.contentText}>Time of the event</Text>
-						<Text style = {styles.contentText}>Location of the event</Text>
-						<Text style = {styles.contentText}>Host for the event</Text>
+						<Text style = {styles.contentText}>{time}</Text>
+						<Text style = {styles.contentText}>{location}</Text>
+						<Text style = {styles.contentText}>{host}</Text>
 					</View>
 				</View>
 			</View>
@@ -23,21 +23,23 @@ export const EventCard = ({}
 
 const styles = StyleSheet.create({
 	EventsCardContainer: {
-		width: '100.1%',
+		width: '100%',
 		gap: 20,
 		display: 'flex',
 		flexDirection: 'row',
 		justifyContent: 'flex-start',
 		alignItems: 'center',
 		borderRadius: 30,
-		backgroundColor: '#3365a6'
+		backgroundColor: '#3365a6',
+		paddingRight: 20
 	},
 	textGroup: {
-		height: 70,
+		width: '50%',
 		display: 'flex',
 		flexDirection: 'column',
 		justifyContent: 'space-between',
-		alignItems: 'flex-start'
+		paddingTop: 30,
+		paddingBottom: 30
 
 	},
 	title: {
@@ -51,18 +53,20 @@ const styles = StyleSheet.create({
 		display: 'flex',
 		flexDirection: 'column',
 		justifyContent: 'center',
-		alignItems: 'center'
+		paddingLeft: 20
 	},
 	contentText: {
 		color: '#ffffff',
 		fontSize: 13,
-		textAlign: 'center',
 		whiteSpace: 'nowrap'
 
 	},
 	ImageEventsCard: {
-		width: '53.6%',
-		alignSelf: 'stretch'
+		width: '50%',
+		height: '100%',
+		borderTopLeftRadius: 30,
+		borderBottomLeftRadius: 30
+
 	}
 });
 
