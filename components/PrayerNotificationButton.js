@@ -10,9 +10,11 @@ export const PrayerNotificationButton = ({backgroundColor, iconColor}) => {
 	let activeColors = colors[theme.mode];
 
 	return (
-			<TouchableOpacity  style={[{backgroundColor: backgroundColor}, styles.PrayerNotificationButton]}>
-				<Image style = {styles.PrayerNotificationIcon} source = {require('../assets/eventsImage.png')}/>
-			</TouchableOpacity>
+			<View>
+				<TouchableOpacity  style={[{backgroundColor: backgroundColor}, styles.PrayerNotificationButton]}>
+					<Image style = {styles.PrayerNotificationIcon} source = {require('../assets/eventsImage.png')}/>
+				</TouchableOpacity>
+			</View>
 			);
 }
 

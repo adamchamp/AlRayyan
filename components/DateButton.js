@@ -9,9 +9,11 @@ export const DateButton = ({date}) => {
 	let activeColors = colors[theme.mode];
 
 	return (
-			<TouchableOpacity  style={[{backgroundColor: activeColors.primary}, styles.dateButton]}>
-				<Text style={[{color: activeColors.white}, styles.dateButtonText]}>{date}</Text>
-			</TouchableOpacity>
+			<View>
+				<TouchableOpacity  style={[{backgroundColor: activeColors.primary}, styles.dateButton]}>
+					<Text style={[{color: activeColors.white}, styles.dateButtonText]}>{date}</Text>
+				</TouchableOpacity>
+			</View>
 			);
 }
 
