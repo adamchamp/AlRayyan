@@ -1,13 +1,10 @@
 import * as React from 'react';
-import MainContainer from './navigation/MainContainer';
-import {colors} from './config/theme';
+import {View, Text} from 'react-native';
+import BottomTabNavigator from './navigations/BottomTabNavigator';
 
-
-function App()
+export default function App()
 {
 	return (
-			<MainContainer/>
+			<BottomTabNavigator/>
 			);
-}
-
-export default App;
+};
