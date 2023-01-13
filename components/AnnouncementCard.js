@@ -17,7 +17,7 @@ export const AnnouncementCard = ({title, description}) => {
 				</View>
 			</View>
 			);
-}
+};
 
 
 

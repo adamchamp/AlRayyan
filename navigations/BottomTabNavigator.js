@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
 		position: 'absolute',
 		backgroundColor: activeColors.primary,
 		borderTopWidth: 0,
-		height: 92
+		height: '10%'
 	}
 });
 
