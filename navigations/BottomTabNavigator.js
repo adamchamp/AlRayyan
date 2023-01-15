@@ -40,19 +40,19 @@ function BottomTabNavigator()
 
 									if (route.name === ROUTES.HOME)
 									{
-										iconName = focused ? 'homeIcon' : 'homeIcon_Selected';
+										iconName = focused ? 'homeIcon' : 'homeIcon';
 									}
 									else if (route.name === ROUTES.SETTINGS)
 									{
-										iconName = focused ? 'settingsIcon' : 'settingsIcon_Selected';
+										iconName = focused ? 'settingsIcon' : 'settingsIcon';
 									}
 									else if (route.name === ROUTES.DONATE)
 									{
-										iconName = focused ? 'donateIcon' : 'donateIcon_Selected';
+										iconName = focused ? 'donateIcon' : 'donateIcon';
 									}
 									else if (route.name === ROUTES.EVENTS)
 									{
-										iconName = focused ? 'eventsIcon' : 'eventsIcon_Selected';
+										iconName = focused ? 'eventsIcon' : 'eventsIcon';
 									}
 
 									return <CustomIcon name={iconName} size={50}/>;

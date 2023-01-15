@@ -28,13 +28,5 @@ export default function CustomIcon(props)
 			);
 };
 
-const styles = StyleSheet.create({
-	androidIcon: {
-		color: 'red',
-		paddingTop: 30,
-		paddingBottom: 30,
-		paddingLeft: 15,
-		paddingRight: 15,
-		borderRadius: 30
-	}});
+const styles = StyleSheet.create({});
 
