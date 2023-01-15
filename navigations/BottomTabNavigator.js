@@ -9,6 +9,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {colors} from '../config/theme';
 import {ROUTES} from '../config';
 import {Home, Events, Donate, Settings} from '../screens';
+import CustomIcon from '../components/CustomIcon.js';
 //import CustomTabBarButton from '../components/CustomTabBarButton';
 //import CustomTabBar from '../components/CustomTabBar';
 
@@ -39,22 +40,22 @@ function BottomTabNavigator()
 
 									if (route.name === ROUTES.HOME)
 									{
-										iconName = focused ? 'home' : 'home-outline';
+										iconName = focused ? 'homeIcon' : 'homeIcon_Selected';
 									}
 									else if (route.name === ROUTES.SETTINGS)
 									{
-										iconName = focused ? 'settings' : 'settings-outline';
+										iconName = focused ? 'settingsIcon' : 'settingsIcon_Selected';
 									}
 									else if (route.name === ROUTES.DONATE)
 									{
-										iconName = focused ? 'list' : 'list-outline';
+										iconName = focused ? 'donateIcon' : 'donateIcon_Selected';
 									}
 									else if (route.name === ROUTES.EVENTS)
 									{
-										iconName = focused ? 'list' : 'list-outline';
+										iconName = focused ? 'eventsIcon' : 'eventsIcon_Selected';
 									}
 
-									return <Ionicons name={iconName} size={22} color={color} />;
+									return <CustomIcon name={iconName} size={50}/>;
 								}
 						})}
 				>

@@ -1,6 +1,7 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import {colors} from '../config/theme';
+import CustomIcon from '../components/CustomIcon.js';
 
 const Home = () => {
 	const theme = {mode: "light"};
@@ -15,6 +16,7 @@ const Home = () => {
 								backgroundColor: activeColors.white
 							}}>
 				<Text>Home!</Text>
+
 			</View>
 			);
 };
