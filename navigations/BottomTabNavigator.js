@@ -55,7 +55,7 @@ function BottomTabNavigator()
 										iconName = focused ? 'eventsIcon' : 'eventsIcon';
 									}
 
-									return <CustomIcon name={iconName} size={50}/>;
+									return <CustomIcon name={iconName} size={40}/>;
 								}
 						})}
 				>
