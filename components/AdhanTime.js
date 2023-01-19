@@ -1,19 +1,19 @@
 import React from "react";
 import {View, StyleSheet, Text} from 'react-native';
-
+import {useContext} from 'react';
+import {ThemeContext} from '../contexts/ThemeContext';
 import {colors} from '../config/theme';
 
 
 
-const theme = {mode: "light"};
-let activeColors = colors[theme.mode];
 
 export const AdhanTime = ({time}) => {
-
+	const {theme} = useContext(ThemeContext);
+	let activeColors = colors[theme.mode];
 
 	return (
-			<View style={styles.Container}>
-				<Text style={styles.text}>{time}</Text>
+			<View style={[{backgroundColor: activeColors.primary}, styles.container]}>
+				<Text style={[{color: activeColors.white}, styles.text]}>{time}</Text>
 			</View>
 
 			);
@@ -22,8 +22,7 @@ export const AdhanTime = ({time}) => {
 
 
 const styles = StyleSheet.create({
-	Container: {
-		backgroundColor: activeColors.primary,
+	container: {
 		width: '100%',
 		gap: '30',
 		justifyContent: 'center',
@@ -38,7 +37,6 @@ const styles = StyleSheet.create({
 		fontSize: 16,
 		textAlign: 'center',
 		whiteSpace: 'nowrap',
-		color: activeColors.white
 	}
 });
 

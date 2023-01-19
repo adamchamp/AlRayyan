@@ -1,11 +1,12 @@
 import React from "react";
 import {View, Image, StyleSheet, Text} from 'react-native';
-
+import {useContext} from 'react';
+import {ThemeContext} from '../contexts/ThemeContext';
 import {colors} from '../config/theme';
 
 
 export const AnnouncementCard = ({title, description}) => {
-	const theme = {mode: "light"};
+	const {theme} = useContext(ThemeContext);
 	let activeColors = colors[theme.mode];
 
 	return (

@@ -23,7 +23,7 @@ export default function CustomIcon(props)
 
 	return (
 			<View>
-				<Icon name={props.name} size={props.size} color="white" />
+				<Icon name={props.name} size={props.size} color={props.color} />
 			</View>
 			);
 };

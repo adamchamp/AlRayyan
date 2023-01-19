@@ -5,7 +5,8 @@ import {useNavigation} from '@react-navigation/native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
-
+import {useContext} from 'react';
+import {ThemeContext} from '../contexts/ThemeContext';
 import {colors} from '../config/theme';
 import {ROUTES} from '../config';
 import {Home, Events, Donate, Settings} from '../screens';
@@ -15,27 +16,29 @@ import CustomIcon from '../components/CustomIcon.js';
 
 
 const Tab = createBottomTabNavigator();
-const theme = {mode: "light"};
-let activeColors = colors[theme.mode];
+
 
 function BottomTabNavigator()
 {
-
+	const {theme} = useContext(ThemeContext);
+	let activeColors = colors[theme.mode];
 
 	return (
 			<NavigationContainer>
 				<Tab.Navigator
+
 					initialRouteName={ROUTES.HOME}
 
 					screenOptions={({ route }) => ({
 
 								headerShown: false,
 								tabBarShowLabel: false,
-								tabBarInactiveTintColor: activeColors.white,
+								tabBarInactiveTintColor: 'white',
 								tabBarStyle: styles.tabBarStyle,
-								tabBarActiveTintColor: activeColors.tritanary,
+								tabBarActiveTintColor: 'white',
+								tabBarActiveBackgroundColor: 'gold',
 
-								tabBarIcon: ({ focused, color, size }) => {
+								tabBarIcon: ({color, size, focused}) => {
 									let iconName;
 
 									if (route.name === ROUTES.HOME)
@@ -55,7 +58,7 @@ function BottomTabNavigator()
 										iconName = focused ? 'eventsIcon' : 'eventsIcon';
 									}
 
-									return <CustomIcon name={iconName} size={40}/>;
+									return <CustomIcon name={iconName} size={40} color={color}/>;
 								}
 						})}
 				>
@@ -84,7 +87,7 @@ export default BottomTabNavigator;
 const styles = StyleSheet.create({
 	tabBarStyle: {
 		position: 'absolute',
-		backgroundColor: activeColors.primary,
+		backgroundColor: "black",
 		borderTopWidth: 0,
 		height: '10%'
 	}
