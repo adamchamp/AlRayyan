@@ -1,9 +1,8 @@
-import {StyleSheet, Text, View, Image, ImageBackground} from 'react-native';
 import React from 'react';
-import {colors}
-from '../config/theme';
-import {LogoHeader}
-from '../components/LogoHeader';
+import {StyleSheet, Text, View, Image, ImageBackground} from 'react-native';
+import {colors} from '../config/theme';
+import {LogoHeader} from '../components/LogoHeader';
+import {PrayerTable} from '../components/PrayerTable';
 
 const Home = () => {
 	const theme = {mode: "light"};
@@ -11,9 +10,7 @@ const Home = () => {
 	return (
 			<View>
 				<LogoHeader/>
-				<Image style={styles.image} source ={require('../assets/asr.png')}/>
-
-
+				<PrayerTable/>
 
 			</View>
 			);
