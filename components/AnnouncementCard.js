@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
 	AnnouncementCardContainer: {
 		display: 'flex',
 		flexDirection: 'row',
-		width: '100%',
+		width: '94%',
 		gap: '30',
 		justifyContent: 'center',
 		alignItems: 'center',
@@ -34,12 +34,14 @@ const styles = StyleSheet.create({
 		paddingBottom: 20,
 		paddingRight: 30,
 		paddingLeft: 30,
-		borderRadius: 30
+		borderRadius: 30,
+		margin: 12
 	},
 
 	announcementIcon: {
 		width: 40,
-		height: 35.25
+		height: 35.25,
+		margin: 10
 
 	},
 
@@ -67,4 +69,3 @@ const styles = StyleSheet.create({
 
 	}
 });
-

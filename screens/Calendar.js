@@ -9,7 +9,7 @@ import {ROUTES} from '../config';
 const window = Dimensions.get("window");
 const screen = Dimensions.get("screen");
 
-const Calendar = ({navigation}) => {
+const Calendar = () => {
 	//Setting the theme and colors
 	const {theme} = useContext(ThemeContext);
 	let activeColors = colors[theme.mode];

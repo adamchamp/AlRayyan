@@ -87,7 +87,7 @@ export default BottomTabNavigator;
 const styles = StyleSheet.create({
 	tabBarStyle: {
 		position: 'absolute',
-		backgroundColor: "black",
+		backgroundColor: 'black',
 		borderTopWidth: 0,
 		height: '10%'
 	}

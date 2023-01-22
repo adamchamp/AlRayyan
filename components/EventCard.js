@@ -29,14 +29,15 @@ export const EventCard = ({title, time, location, host}) => {
 
 const styles = StyleSheet.create({
 	EventsCardContainer: {
-		width: '100%',
+		width: '94%',
 		gap: 20,
 		display: 'flex',
 		flexDirection: 'row',
 		justifyContent: 'flex-start',
 		alignItems: 'center',
 		borderRadius: 30,
-		paddingRight: 20
+		paddingRight: 20,
+		margin: 12
 	},
 	textGroup: {
 		width: '50%',
@@ -72,4 +73,3 @@ const styles = StyleSheet.create({
 
 	}
 });
-

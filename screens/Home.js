@@ -15,10 +15,11 @@ const Home = ({navigation}) => {
 
 	return (
 			<View style={styles.container}>
-				<ImageBackground source={require('../assets/fajr.png')} resizeMode="cover" style={styles.image}>
+				<ImageBackground source={require('../assets/fajr.png')}  style={styles.image}>
+
 					<View style={styles.header}>
 						<LogoHeader/>
-						<TouchableOpacity onPress={() => navigation.navigate(ROUTES.CALENDAR)}>
+						<TouchableOpacity onPress={() => navigation.navigate(ROUTES.CALENDAR)} style={styles.calendarButton}>
 							<CustomIcon name={'eventsIcon'} size={40} color={'white'}/>
 						</TouchableOpacity>
 					</View>
@@ -52,15 +53,23 @@ const Home = ({navigation}) => {
 };
 export default Home;
 const styles = StyleSheet.create({
-	container: {
-		width: '100%',
-		height: '100%',
-		backgroundColor: 'white'
-	},
+	container:
+			{
+				width: '100%',
+				height: '100%',
+				backgroundColor: 'white'
+			},
 	header:
 			{
 				display: 'flex',
 				flexDirection: 'row',
+				justifyContent: 'center',
+				alignItems: 'center',
+				alignSelf: 'center'
+			},
+	calendarButton:
+			{
+				alignSelf: 'center',
 				justifyContent: 'center',
 				alignItems: 'center'
 			},

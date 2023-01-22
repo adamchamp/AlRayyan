@@ -1,25 +1,23 @@
 import React from "react";
 import {View, Image, StyleSheet, Text, TouchableOpacity} from 'react-native';
-
-import {useContext} from 'react';
-import {ThemeContext} from '../contexts/ThemeContext';
-
 import {colors} from '../config/theme';
+import * as WebBrowser from 'expo-web-browser';
+const donationsWebsiteURL = 'https://globalislamic.org/projects/general-donation/';
 
 
 export const DonateCard = ({title, hadith, translation}) => {
-	const {theme} = useContext(ThemeContext);
+	const theme = {mode: "light"};
 	let activeColors = colors[theme.mode];
 
 	return (
 			<View style={[{backgroundColor: activeColors.primary}, styles.donationsCardContainer]}>
 				<Text style={[{color: activeColors.white}, styles.title]}>{title}</Text>
 				<View style = {styles.textContainer}>
-					<Text style={[{color: activeColors.white}, styles.contentText]}>{hadith}</Text>
+					<Text style={[{color: activeColors.white}, styles.contentText, {marginBottom: 10}]}>{hadith}</Text>
 					<Text style={[{color: activeColors.white}, styles.contentText]}>{translation}</Text>
 				</View>
 
-				<TouchableOpacity  style={[{backgroundColor: activeColors.white}, styles.donationButton]}>
+				<TouchableOpacity  style={[{backgroundColor: activeColors.white}, styles.donationButton]} onPress = {() => WebBrowser.openBrowserAsync(donationsWebsiteURL)}>
 					<Text style={[{color: activeColors.primary}, styles.donationButtonText]}>Donate</Text>
 				</TouchableOpacity>
 
@@ -40,24 +38,29 @@ const styles = StyleSheet.create({
 		paddingBottom: 30,
 		paddingLeft: 15,
 		paddingRight: 15,
-		borderRadius: 30
+		borderRadius: 30,
+		marginTop: 10,
+		marginBottom: 10
 	},
 	contentText: {
-		fontSize: 17,
+		fontSize: 16,
 		textAlign: 'center',
 		whiteSpace: 'nowrap'
 	},
 	title: {
-		fontSize: 28,
+		fontSize: 27,
 		textAlign: 'center'
 
 	},
 	textContainer: {
-		gap: 10,
+		gap: 15,
 		display: 'flex',
 		flexDirection: 'column',
 		justifyContent: 'center',
-		alignItems: 'center'
+		alignItems: 'center',
+		padding: 5,
+		marginBottom: 10
+
 
 	},
 	donationButton: {
@@ -74,12 +77,10 @@ const styles = StyleSheet.create({
 		borderWidth: 0,
 		borderRadius: 30,
 		boxSizing: 'content-box',
-		overflow: 'hidden',
+		overflow: 'hidden'
 	},
 	donationButtonText: {
 		fontSize: 16,
 		textAlign: 'center'
 	}
 });
-
-
