@@ -1,26 +1,6 @@
 // imports
 import {useEffect, useState} from "react";
-import Axios from "axios";
-
-function functions() {
-
-  // creates an object state 
-  const [announcements, setAnnouncements] = useState(null);
-
-  // useEffect ensures data is only fetched once 
-  useEffect(() => {
-
-    // get request with api via axios 
-    Axios.get("https://globalislamic.org/?mec-ical-feed=1").then((res) => {
-      
-      // saves JSON data to the state 
-      setAnnouncements(res.data);
-    });
-  }, []);
- 
-  console.log(announcements);
-}
-export default functions;
+import Axios from "axios";    // npm install axios
 
 // fetches announcements
 export const getAnnouncements = async () => {
@@ -30,13 +10,15 @@ export const getAnnouncements = async () => {
 
   // useEffect ensures data is only fetched once 
   useEffect(() => {
-
-    // get request with api via axios 
-    Axios.get("https://globalislamic.org/wp-json/wp/v2/posts").then((res) => {
-      
+    async function fetchData() {
+  
+      await Axios.get("https://globalislamic.org/wp-json/wp/v2/posts").then((res) => {
+        
       // saves JSON data to the state 
-      setAnnouncements(res.data);
-    });
+      setAnnouncements(res.data[0]);
+      });
+    }
+    fetchData();
   }, []);
  
   // determines number of announcements 
@@ -44,10 +26,13 @@ export const getAnnouncements = async () => {
 
   if (announcements != null) 
     announceNum = Object.keys(announcements).length;
-  
-  // outputs    
+
+  // returns 
+  const announcementsArr = [];
   for (let i = 0; i < announceNum; i++)
-    console.log(Object.values(announcements[i].title));
+    announcementsArr[i] = Object.values(announcements[i].title);
+
+  return announcementsArr;
 }
 
 // fetches prayer times 
@@ -58,23 +43,24 @@ export const getPrayerTimes = async () => {
 
   // useEffect ensures data is only fetched once 
   useEffect(() => {
+    async function fetchData() {
 
-    // get request with api via axios 
-    Axios.get("http://globalislamic.org/wp-json/dpt/v1/prayertime?filter=today").then((res) => {
-      
+      await Axios.get("http://globalislamic.org/wp-json/dpt/v1/prayertime?filter=today").then((res) => {
+        
       // saves JSON data to the state 
       setPrayerTime(res.data[0]);
-    });
-  }, []);
-  
-  // outputs 
-  if (prayerTime != null) { 
-    if (prayerTime.d_date != null) {
-      return prayerTime.d_date;
-    } else {
-      console.log("Inner");
+      });
     }
-    /*console.log("       Masjid Al-Rayyan");
+    fetchData();
+  }, []);
+
+  // returns 
+  if (prayerTime != null) return prayerTime;
+  
+  // output
+  /*
+  if (prayerTime != null) {
+    console.log("       Masjid Al-Rayyan");
     console.log("");
     console.log("          " + prayerTime?.d_date);
     console.log("  " + prayerTime?.hijri_date_convert);
@@ -86,12 +72,12 @@ export const getPrayerTimes = async () => {
     console.log("Zuhr      " + prayerTime?.zuhr_begins + "    " + prayerTime?.zuhr_jamah);
     console.log("Asr       " + prayerTime?.asr_mithl_1 + "    " + prayerTime?.asr_jamah);
     console.log("Maghrib   " + prayerTime?.maghrib_begins + "    " + prayerTime?.maghrib_jamah);
-    console.log("Isha      " + prayerTime?.isha_begins + "    " + prayerTime?.isha_jamah);*/
-  } else  {
-    console.log("Outer");
+    console.log("Isha      " + prayerTime?.isha_begins + "    " + prayerTime?.isha_jamah);
   }
+ */ 
 }
 
+// eWorx function to get data 
 export const getData = async (url, params, headers) => {
   let retValue;
   await Axios
@@ -106,7 +92,3 @@ export const getData = async (url, params, headers) => {
       });
   return retValue;
 };
-
-// npm install axios
-
-
