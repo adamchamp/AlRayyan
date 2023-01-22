@@ -1,12 +1,14 @@
 import React from 'react';
-import {StyleSheet, Text, View, Image, ImageBackground} from 'react-native';
+import {StyleSheet, Text, View, Image, ImageBackground, TouchableOpacity} from 'react-native';
 import {useContext} from 'react';
 import {ThemeContext} from '../contexts/ThemeContext';
 import {colors} from '../config/theme';
 import {LogoHeader} from '../components/LogoHeader';
 import {PrayerTable} from '../components/PrayerTable';
+import CustomIcon from '../components/CustomIcon.js';
+import {ROUTES} from '../config';
 
-const Home = () => {
+const Home = ({navigation}) => {
 	//Theme
 	const {theme} = useContext(ThemeContext);
 	let activeColors = colors[theme.mode];
@@ -14,7 +16,12 @@ const Home = () => {
 	return (
 			<View style={styles.container}>
 				<ImageBackground source={require('../assets/fajr.png')} resizeMode="cover" style={styles.image}>
-					<LogoHeader/>
+					<View style={styles.header}>
+						<LogoHeader/>
+						<TouchableOpacity onPress={() => navigation.navigate(ROUTES.CALENDAR)}>
+							<CustomIcon name={'eventsIcon'} size={40} color={'white'}/>
+						</TouchableOpacity>
+					</View>
 
 					<View style={[{backgroundColor: activeColors.white}, styles.dateHeader]}>
 
@@ -50,6 +57,13 @@ const styles = StyleSheet.create({
 		height: '100%',
 		backgroundColor: 'white'
 	},
+	header:
+			{
+				display: 'flex',
+				flexDirection: 'row',
+				justifyContent: 'center',
+				alignItems: 'center'
+			},
 	image:
 			{
 				height: '60%',

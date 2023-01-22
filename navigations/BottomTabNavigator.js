@@ -1,15 +1,15 @@
 import React from 'react';
 import {StyleSheet} from 'react-native';
-import Ionicons from 'react-native-vector-icons/Ionicons';
 import {useNavigation} from '@react-navigation/native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import HomeScreenNavigator from './HomeScreenNavigator';
 
 import {useContext} from 'react';
 import {ThemeContext} from '../contexts/ThemeContext';
 import {colors} from '../config/theme';
 import {ROUTES} from '../config';
-import {Home, Events, Donate, Settings, Calendar} from '../screens';
+import {Home, Events, Donate, Settings} from '../screens';
 import CustomIcon from '../components/CustomIcon.js';
 //import CustomTabBarButton from '../components/CustomTabBarButton';
 //import CustomTabBar from '../components/CustomTabBar';
@@ -41,7 +41,7 @@ function BottomTabNavigator()
 								tabBarIcon: ({color, size, focused}) => {
 									let iconName;
 
-									if (route.name === ROUTES.HOME)
+									if (route.name === ROUTES.HOMESCREENNAVIGATOR)
 									{
 										iconName = focused ? 'homeIcon' : 'homeIcon';
 									}
@@ -57,10 +57,6 @@ function BottomTabNavigator()
 									{
 										iconName = focused ? 'eventsIcon' : 'eventsIcon';
 									}
-									else if (route.name === ROUTES.CALENDAR) 
-									{
-										iconName = focused ? 'eventsIcon' : 'eventsIcon';
-									}
 
 									return <CustomIcon name={iconName} size={40} color={color}/>;
 								}
@@ -68,7 +64,7 @@ function BottomTabNavigator()
 				>
 
 
-				<Tab.Screen name={ROUTES.HOME} component={Home} />
+				<Tab.Screen name={ROUTES.HOMESCREENNAVIGATOR} component={HomeScreenNavigator} />
 
 
 				<Tab.Screen name={ROUTES.EVENTS} component={Events} />
@@ -78,9 +74,6 @@ function BottomTabNavigator()
 
 
 				<Tab.Screen name={ROUTES.SETTINGS} component={Settings} />
-
-
-				<Tab.Screen name={ROUTES.CALENDAR} component={Calendar} />
 
 
 			</Tab.Navigator>
