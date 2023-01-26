@@ -7,13 +7,13 @@ import {colors} from '../config/theme';
 
 
 
-export const AdhanTime = ({time}) => {
+export const AdhanTime = (props) => {
 	const {theme} = useContext(ThemeContext);
 	let activeColors = colors[theme.mode];
 
 	return (
-			<View style={[{backgroundColor: activeColors.primary}, styles.container]}>
-				<Text style={[{color: activeColors.white}, styles.text]}>{time}</Text>
+			<View style={[{backgroundColor: props.color}, styles.container]}>
+				<Text style={[{color: props.textColor}, styles.text]}>{props.time}</Text>
 			</View>
 
 			);

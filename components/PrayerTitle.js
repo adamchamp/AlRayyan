@@ -8,13 +8,13 @@ import {colors} from '../config/theme';
 
 
 
-export const PrayerTitle = ({title}) => {
+export const PrayerTitle = (props) => {
 	const {theme} = useContext(ThemeContext);
 	let activeColors = colors[theme.mode];
 
 	return (
-			<View style={[{backgroundColor: activeColors.primary}, styles.container]}>
-				<Text style={[{color: activeColors.white}, styles.text]}>{title}</Text>
+			<View style={[{backgroundColor: props.color}, styles.container]}>
+				<Text style={[{color: props.textColor}, styles.text]}>{props.title}</Text>
 			</View>
 
 			);

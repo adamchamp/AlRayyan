@@ -15,7 +15,7 @@ const Home = ({navigation}) => {
 
 	return (
 			<View style={styles.container}>
-				<ImageBackground source={require('../assets/fajr.png')}  style={styles.image}>
+				<ImageBackground source={require('../assets/fajr.png')}  style={styles.image} resizeMode="cover">
 
 					<View style={styles.header}>
 						<LogoHeader/>
@@ -42,10 +42,11 @@ const Home = ({navigation}) => {
 
 
 					</View>
-
-
 				</ImageBackground>
-				<PrayerTable/>
+
+				<View style={styles.table}>
+					<PrayerTable/>
+				</View>
 
 
 			</View>
@@ -75,7 +76,7 @@ const styles = StyleSheet.create({
 			},
 	image:
 			{
-				height: '60%',
+				height: '50%',
 				width: '100%'
 			},
 	dateHeader:
@@ -127,6 +128,13 @@ const styles = StyleSheet.create({
 	timeNextText2:
 			{
 
+			},
+	table:
+			{
+				justifyContent: 'center',
+				alignItems: 'center',
+				alignSelf: 'center',
+				width: '100%'
 			}
 
 });

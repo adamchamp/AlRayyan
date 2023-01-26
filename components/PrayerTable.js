@@ -17,13 +17,27 @@ export const PrayerTable = () => {
 	let activeColors = colors[theme.mode];
 
 	//Data for rows
-	const header = [<PrayerTitle title="Prayer"/>, <AdhanTime time="Adhan"/>, <IqaamaTime time="Iqaama"/>];
-	const fajr = [<PrayerTitle title="Fajr"/>, <AdhanTime time="1:00"/>, <IqaamaTime time="1:00"/>];
-	const sunrise = [<PrayerTitle title="Sunrise"/>, <AdhanTime time="1:00"/>, <IqaamaTime time="1:00"/>];
-	const zuhur = [<PrayerTitle title="Zuhur"/>, <AdhanTime time="1:00"/>, <IqaamaTime time="1:00"/>];
-	const asr = [<PrayerTitle title="Asr"/>, <AdhanTime time="1:00"/>, <IqaamaTime time="1:00"/>];
-	const maghrib = [<PrayerTitle title="Maghrib"/>, <AdhanTime time="1:00"/>, <IqaamaTime time="1:00"/>];
-	const ishaa = [<PrayerTitle title="Ishaa"/>, <AdhanTime time="1:00"/>, <IqaamaTime time="1:00"/>];
+	const header = [<PrayerTitle title="Prayer" color={activeColors.white} textColor={activeColors.primary}/>,
+		<AdhanTime time="Adhan" color={activeColors.white} textColor={activeColors.primary}/>,
+		<IqaamaTime time="Iqaama" color={activeColors.white} textColor={activeColors.primary}/>];
+	const fajr = [<PrayerTitle title="Fajr" color={activeColors.primary} textColor={activeColors.white}/>,
+		<AdhanTime time="1:00" color={activeColors.primary} textColor={activeColors.white}/>,
+		<IqaamaTime time="1:00" color={activeColors.primary} textColor={activeColors.white}/>];
+	const sunrise = [<PrayerTitle title="Sunrise" color={activeColors.primary} textColor={activeColors.white}/>,
+		<AdhanTime time="1:00" color={activeColors.primary} textColor={activeColors.white}/>,
+		<IqaamaTime time="1:00" color={activeColors.primary} textColor={activeColors.white}/>];
+	const zuhur = [<PrayerTitle title="Zuhur" color={activeColors.primary} textColor={activeColors.white}/>,
+		<AdhanTime time="1:00" color={activeColors.primary} textColor={activeColors.white}/>,
+		<IqaamaTime time="1:00" color={activeColors.primary} textColor={activeColors.white}/>];
+	const asr = [<PrayerTitle title="Asr" color={activeColors.primary} textColor={activeColors.white}/>,
+		<AdhanTime time="1:00" color={activeColors.primary} textColor={activeColors.white}/>,
+		<IqaamaTime time="1:00" color={activeColors.primary} textColor={activeColors.white}/>];
+	const maghrib = [<PrayerTitle title="Maghrib" color={activeColors.primary} textColor={activeColors.white}/>,
+		<AdhanTime time="1:00" color={activeColors.primary} textColor={activeColors.white}/>,
+		<IqaamaTime time="1:00" color={activeColors.primary} textColor={activeColors.white}/>];
+	const ishaa = [<PrayerTitle title="Ishaa" color={activeColors.primary} textColor={activeColors.white}/>,
+		<AdhanTime time="1:00" color={activeColors.primary} textColor={activeColors.white} color={activeColors.primary} textColor={activeColors.white}/>,
+		<IqaamaTime time="1:00"/>];
 
 
 	return (
