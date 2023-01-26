@@ -1,12 +1,15 @@
 import React from "react";
 import {View, Image, StyleSheet, Text, TouchableOpacity} from 'react-native';
+import {useContext} from 'react';
+import {ThemeContext} from '../contexts/ThemeContext';
 import {colors} from '../config/theme';
 import * as WebBrowser from 'expo-web-browser';
 const donationsWebsiteURL = 'https://globalislamic.org/projects/general-donation/';
 
 
 export const DonateCard = ({title, hadith, translation}) => {
-	const theme = {mode: "light"};
+	//Theme
+	const {theme} = useContext(ThemeContext);
 	let activeColors = colors[theme.mode];
 
 	return (

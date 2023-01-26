@@ -17,9 +17,6 @@ export const PrayerTable = () => {
 	let activeColors = colors[theme.mode];
 
 	//Data for rows
-	const header = [<PrayerTitle title="Prayer" color={activeColors.white} textColor={activeColors.primary}/>,
-		<AdhanTime time="Adhan" color={activeColors.white} textColor={activeColors.primary}/>,
-		<IqaamaTime time="Iqaama" color={activeColors.white} textColor={activeColors.primary}/>];
 	const fajr = [<PrayerTitle title="Fajr" color={activeColors.primary} textColor={activeColors.white}/>,
 		<AdhanTime time="1:00" color={activeColors.primary} textColor={activeColors.white}/>,
 		<IqaamaTime time="1:00" color={activeColors.primary} textColor={activeColors.white}/>];
@@ -36,13 +33,12 @@ export const PrayerTable = () => {
 		<AdhanTime time="1:00" color={activeColors.primary} textColor={activeColors.white}/>,
 		<IqaamaTime time="1:00" color={activeColors.primary} textColor={activeColors.white}/>];
 	const ishaa = [<PrayerTitle title="Ishaa" color={activeColors.primary} textColor={activeColors.white}/>,
-		<AdhanTime time="1:00" color={activeColors.primary} textColor={activeColors.white} color={activeColors.primary} textColor={activeColors.white}/>,
-		<IqaamaTime time="1:00"/>];
+		<AdhanTime time="1:00" color={activeColors.primary} textColor={activeColors.white}/>,
+		<IqaamaTime time="1:00" color={activeColors.primary} textColor={activeColors.white}/>];
 
 
 	return (
 			<View style={styles.container}>
-				<Row data={header} style={styles.rows}/>
 				<Row data={fajr} style={styles.rows}/>
 				<Row data={sunrise} style={styles.rows}/>
 				<Row data={zuhur} style={styles.rows}/>

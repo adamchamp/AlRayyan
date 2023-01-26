@@ -5,7 +5,8 @@ import {ThemeContext} from '../contexts/ThemeContext';
 import {colors} from '../config/theme';
 import {LogoHeader} from '../components/LogoHeader';
 import {PrayerTable} from '../components/PrayerTable';
-import CustomIcon from '../components/CustomIcon.js';
+import CustomIcon from '../components/CustomIcon';
+import {PrayerHeader} from '../components/PrayerHeader';
 import {ROUTES} from '../config';
 
 const Home = ({navigation}) => {
@@ -14,9 +15,8 @@ const Home = ({navigation}) => {
 	let activeColors = colors[theme.mode];
 
 	return (
-			<View style={styles.container}>
+			<View style={[{backgroundColor: activeColors.background}, styles.container]}>
 				<ImageBackground source={require('../assets/fajr.png')}  style={styles.image} resizeMode="cover">
-
 					<View style={styles.header}>
 						<LogoHeader/>
 						<TouchableOpacity onPress={() => navigation.navigate(ROUTES.CALENDAR)} style={styles.calendarButton}>
@@ -24,8 +24,8 @@ const Home = ({navigation}) => {
 						</TouchableOpacity>
 					</View>
 
-					<View style={[{backgroundColor: activeColors.white}, styles.dateHeader]}>
 
+					<View style={[{backgroundColor: activeColors.white}, styles.dateHeader]}>
 						<View style={styles.dates}>
 							<Text style={[{color: activeColors.primary}, styles.dateText1]}>
 							October 10th, 2022
@@ -39,8 +39,10 @@ const Home = ({navigation}) => {
 							<Text style={[{color: activeColors.white}, styles.timeNextText1]}>1:25</Text>
 							<Text style={[{color: activeColors.white}, styles.timeNextText2]}>Till asr</Text>
 						</View>
+					</View>
 
-
+					<View style={styles.prayerHeader}>
+						<PrayerHeader/>
 					</View>
 				</ImageBackground>
 
@@ -57,8 +59,7 @@ const styles = StyleSheet.create({
 	container:
 			{
 				width: '100%',
-				height: '100%',
-				backgroundColor: 'white'
+				height: '100%'
 			},
 	header:
 			{
@@ -66,7 +67,8 @@ const styles = StyleSheet.create({
 				flexDirection: 'row',
 				justifyContent: 'center',
 				alignItems: 'center',
-				alignSelf: 'center'
+				alignSelf: 'center',
+				paddingBottom: 15
 			},
 	calendarButton:
 			{
@@ -76,8 +78,7 @@ const styles = StyleSheet.create({
 			},
 	image:
 			{
-				height: '50%',
-				width: '100%'
+
 			},
 	dateHeader:
 			{
@@ -91,7 +92,6 @@ const styles = StyleSheet.create({
 				justifyContent: 'center',
 				alignItems: 'center',
 				alignSelf: 'center'
-
 			},
 	dates:
 			{
@@ -129,8 +129,14 @@ const styles = StyleSheet.create({
 			{
 
 			},
+
+	prayerHeader:
+			{
+				paddingTop: 25
+			},
 	table:
 			{
+				paddingTop: 10,
 				justifyContent: 'center',
 				alignItems: 'center',
 				alignSelf: 'center',

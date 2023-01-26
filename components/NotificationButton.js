@@ -6,9 +6,10 @@ import {colors} from '../config/theme';
 
 
 
-export const PrayerNotificationButton = ({backgroundColor, iconColor}) => {
+export const NotificationButton = ({backgroundColor, iconColor}) => {
 	//Contexts: For the current prayer have a context to set colors
 	//States: For finding current states have a context to retrieve/ set state
+
 	const {theme} = useContext(ThemeContext);
 	let activeColors = colors[theme.mode];
 

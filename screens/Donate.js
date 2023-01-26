@@ -1,16 +1,19 @@
 import {Linking, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-// import {colors} from '../config/theme';
+import {useContext} from 'react';
+import {ThemeContext} from '../contexts/ThemeContext';
+import {colors} from '../config/theme';
 import {LogoHeader} from '../components/LogoHeader';
 import {DonateCard} from '../components/DonateCard';
 
 
 const Donate = () => {
-	const theme = {mode: "light"};
-	// let activeColors = colors[theme.mode];
+	//Theme
+	const {theme} = useContext(ThemeContext);
+	let activeColors = colors[theme.mode];
 
 	return (
-			<View style={styles.container}>
+			<View style={[{backgroundColor: activeColors.background}, styles.container]}>
 				<LogoHeader/>
 
 				<DonateCard
@@ -28,8 +31,10 @@ export default Donate;
 const styles = StyleSheet.create({
 	container:
 			{
-				marginTop: 10,
-				padding: 10
+				width: '100%',
+				height: '100%',
+				paddingLeft: 15,
+				paddingRight: 15
 			}
 
 });
