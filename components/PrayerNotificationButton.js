@@ -9,11 +9,13 @@ import {colors} from '../config/theme';
 export const PrayerNotificationButton = ({backgroundColor, iconColor}) => {
 	//Contexts: For the current prayer have a context to set colors
 	//States: For finding current states have a context to retrieve/ set state
+
+	//Theme
 	const {theme} = useContext(ThemeContext);
 	let activeColors = colors[theme.mode];
 
 	return (
-			<View>
+			<View style={[{backgroundColor: activeColors.primary}, styles.container]}>
 				<TouchableOpacity  style={[{backgroundColor: backgroundColor}, styles.PrayerNotificationButton]}>
 					<Image style = {styles.PrayerNotificationIcon} source = {require('../assets/eventsImage.png')}/>
 				</TouchableOpacity>

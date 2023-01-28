@@ -4,14 +4,12 @@ import {useContext} from 'react';
 import {ThemeContext} from '../contexts/ThemeContext';
 import {colors} from '../config/theme';
 import { Table, Row, Rows } from 'react-native-table-component';
-import {PrayerTitle} from './PrayerTitle';
-import {AdhanTime} from './AdhanTime';
-import {IqaamaTime} from './IqaamaTime';
+import {PrayerTitle, IqaamaTime, AdhanTime} from '../components';
 
 
 
 
-export const PrayerTable = () => {
+export const PrayerCol = () => {
 	//Theme
 	const {theme} = useContext(ThemeContext);
 	let activeColors = colors[theme.mode];
@@ -55,8 +53,7 @@ const styles = StyleSheet.create(
 				width: '100%',
 				justifyContent: 'center',
 				alignItems: 'center',
-				paddingRight: 15,
-				paddingLeft: 15
+				paddingRight: 15
 			},
 			rows: {
 				paddingBottom: 20

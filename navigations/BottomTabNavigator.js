@@ -10,7 +10,7 @@ import {ThemeContext} from '../contexts/ThemeContext';
 import {colors} from '../config/theme';
 import {ROUTES} from '../config';
 import {Home, Events, Donate, Settings} from '../screens';
-import CustomIcon from '../components/CustomIcon.js';
+import CustomIcon from '../components';
 //import CustomTabBarButton from '../components/CustomTabBarButton';
 //import CustomTabBar from '../components/CustomTabBar';
 
@@ -33,10 +33,10 @@ function BottomTabNavigator()
 
 								headerShown: false,
 								tabBarShowLabel: false,
-								tabBarInactiveTintColor: 'white',
+								tabBarInactiveTintColor: activeColors.white,
 								tabBarStyle: styles.tabBarStyle,
-								tabBarActiveTintColor: 'white',
-								tabBarActiveBackgroundColor: 'gold',
+								tabBarActiveTintColor: activeColors.white,
+								tabBarActiveBackgroundColor: activeColors.tritanary,
 
 								tabBarIcon: ({color, size, focused}) => {
 									let iconName;

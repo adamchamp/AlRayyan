@@ -3,10 +3,8 @@ import {StyleSheet, Text, View, Image, ImageBackground, TouchableOpacity} from '
 import {useContext} from 'react';
 import {ThemeContext} from '../contexts/ThemeContext';
 import {colors} from '../config/theme';
-import {LogoHeader} from '../components/LogoHeader';
-import {PrayerTable} from '../components/PrayerTable';
-import CustomIcon from '../components/CustomIcon';
-import {PrayerHeader} from '../components/PrayerHeader';
+import {PrayerCol, PrayerHeader, LogoHeader, NotificationButton, NotificationCol} from '../components';
+import CustomIcon from '../components';
 import {ROUTES} from '../config';
 
 const Home = ({navigation}) => {
@@ -20,7 +18,7 @@ const Home = ({navigation}) => {
 					<View style={styles.header}>
 						<LogoHeader/>
 						<TouchableOpacity onPress={() => navigation.navigate(ROUTES.CALENDAR)} style={styles.calendarButton}>
-							<CustomIcon name={'eventsIcon'} size={40} color={'white'}/>
+							<CustomIcon name={'calendarIcon'} size={40} color={'white'}/>
 						</TouchableOpacity>
 					</View>
 
@@ -47,7 +45,12 @@ const Home = ({navigation}) => {
 				</ImageBackground>
 
 				<View style={styles.table}>
-					<PrayerTable/>
+					<PrayerCol/>
+
+
+					<View>
+
+					</View>
 				</View>
 
 
@@ -136,6 +139,8 @@ const styles = StyleSheet.create({
 			},
 	table:
 			{
+				display: 'flex',
+				flexDirection: 'row',
 				paddingTop: 10,
 				justifyContent: 'center',
 				alignItems: 'center',

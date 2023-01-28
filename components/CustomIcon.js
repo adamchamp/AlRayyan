@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useFonts } from 'expo-font';
 import {View, Text, StyleSheet} from 'react-native';
-import { createIconSetFromIcoMoon } from '@expo/vector-icons';
+import {createIconSetFromIcoMoon} from '@expo/vector-icons';
 
 const Icon = createIconSetFromIcoMoon(
 		require('../assets/icomoon/selection.json'),
