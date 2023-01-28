@@ -39,17 +39,24 @@ const Home = ({navigation}) => {
 						</View>
 					</View>
 
+
 					<View style={styles.prayerHeader}>
-						<PrayerHeader/>
+						<View style={styles.prayerTableContainer}>
+							<PrayerHeader/>
+						</View>
+
+						<View style={styles.notificationTableContainer}>
+							<NotificationButton/>
+						</View>
 					</View>
 				</ImageBackground>
 
 				<View style={styles.table}>
-					<PrayerCol/>
-
-
-					<View>
-
+					<View style={styles.prayerTableContainer}>
+						<PrayerCol/>
+					</View>
+					<View style={styles.notificationTableContainer}>
+						<NotificationCol/>
 					</View>
 				</View>
 
@@ -135,17 +142,25 @@ const styles = StyleSheet.create({
 
 	prayerHeader:
 			{
-				paddingTop: 25
-			},
-	table:
-			{
+				width: '100%',
+				paddingTop: 20,
 				display: 'flex',
-				flexDirection: 'row',
-				paddingTop: 10,
-				justifyContent: 'center',
-				alignItems: 'center',
-				alignSelf: 'center',
-				width: '100%'
-			}
+				flexDirection: 'row'
+			},
 
+	table: {
+		display: 'flex',
+		flexDirection: 'row',
+		justifyContent: 'center',
+		alignItems: 'center',
+		alignSelf: 'center',
+		width: '100%'
+
+	},
+	prayerTableContainer: {
+		width: '80%'
+	},
+	notificationTableContainer: {
+		width: '15%'
+	}
 });

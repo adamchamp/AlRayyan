@@ -30,7 +30,8 @@ const styles = StyleSheet.create({
 		paddingTop: 10,
 		paddingBottom: 10,
 		paddingRight: 20,
-		paddingLeft: 20
+		paddingLeft: 20,
+		height: 44
 	},
 
 	text: {

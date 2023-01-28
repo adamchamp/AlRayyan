@@ -25,7 +25,6 @@ export const IqaamaTime = (props) => {
 const styles = StyleSheet.create({
 	container: {
 		width: '100%',
-		gap: '30',
 		justifyContent: 'center',
 		alignItems: 'center',
 		paddingTop: 10,
@@ -33,7 +32,8 @@ const styles = StyleSheet.create({
 		paddingRight: 20,
 		paddingLeft: 20,
 		borderTopRightRadius: 30,
-		borderBottomRightRadius: 30
+		borderBottomRightRadius: 30,
+		height: 44
 	},
 
 	text: {

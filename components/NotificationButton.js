@@ -28,19 +28,11 @@ const styles = StyleSheet.create({
 		paddingRight: 18,
 		paddingBottom: 10,
 		paddingLeft: 18,
-		alignItems: 'center',
 		justifyContent: 'center',
+		alignItems: 'center',
 		width: '100%',
 		borderWidth: 0,
 		borderRadius: 30
-	},
-
-	PrayerNotificationIcon: {
-		width: '50%',
-		height: '100%',
-		borderTopLeftRadius: 30,
-		borderBottomLeftRadius: 30
-
 	}
 });
 
