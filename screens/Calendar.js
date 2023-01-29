@@ -3,6 +3,7 @@ import {ThemeContext} from '../contexts/ThemeContext';
 import {StyleSheet, Text, TouchableOpacity, View, Image, Dimensions} from 'react-native';
 import {colors} from '../config/theme';
 import{LogoHeader} from '../components/LogoHeader';
+import{PrayerOverlay} from '../components/PrayerOverlay';
 import {functions, getPrayerTimes} from "../functions.js";
 import {ROUTES} from '../config';
 
@@ -28,8 +29,8 @@ const Calendar = () => {
 						<Image source = {require('../assets/indicatorLeft.png')}></Image>
 					</TouchableOpacity>
 					<View style={{alignItems: 'center'}}>
-						<Text style={styles.engMonth}>October2022</Text>
-						<Text style={styles.arabMonth}>RabiAlAwwal1444</Text>
+						<Text style={styles.engMonth}>October, 2022</Text>
+						<Text style={styles.arabMonth}>RabiAlAwwal, 1444</Text>
 					</View>
 					<TouchableOpacity>
 						<Image source = {require('../assets/indicatorRight.png')}></Image>
@@ -37,39 +38,67 @@ const Calendar = () => {
 				</View>
 
 				<View style={styles.calendarView}>
-					<View style={styles.sundayColumn}>
+					<View style={styles.weekColumn}>
 						<View>
-							<Text>S</Text>
+							<Text style={styles.weekDay}>S</Text>
+							<PrayerOverlay style={styles.dayButton}></PrayerOverlay>
+							<PrayerOverlay style={styles.dayButton}></PrayerOverlay>
+							<PrayerOverlay style={styles.dayButton}></PrayerOverlay>
+							<PrayerOverlay style={styles.dayButton}></PrayerOverlay>
 						</View>
 					</View>
-					<View style={styles.mondayColumn}>
+					<View style={styles.weekColumn}>
 						<View>
-							<Text>M</Text>
+							<Text style={styles.weekDay}>M</Text>
+							<PrayerOverlay style={styles.dayButton}></PrayerOverlay>
+							<PrayerOverlay style={styles.dayButton}></PrayerOverlay>
+							<PrayerOverlay style={styles.dayButton}></PrayerOverlay>
+							<PrayerOverlay style={styles.dayButton}></PrayerOverlay>
 						</View>
 					</View>
-					<View style={styles.tuesdayColumn}>
+					<View style={styles.weekColumn}>
 						<View>
-							<Text>T</Text>
+							<Text style={styles.weekDay}>T</Text>
+							<PrayerOverlay style={styles.dayButton}></PrayerOverlay>
+							<PrayerOverlay style={styles.dayButton}></PrayerOverlay>
+							<PrayerOverlay style={styles.dayButton}></PrayerOverlay>
+							<PrayerOverlay style={styles.dayButton}></PrayerOverlay>
 						</View>
 					</View>
-					<View style={styles.wednesdayColumn}>
+					<View style={styles.weekColumn}>
 						<View>
-							<Text>W</Text>
+							<Text style={styles.weekDay}>W</Text>
+							<PrayerOverlay style={styles.dayButton}></PrayerOverlay>
+							<PrayerOverlay style={styles.dayButton}></PrayerOverlay>
+							<PrayerOverlay style={styles.dayButton}></PrayerOverlay>
+							<PrayerOverlay style={styles.dayButton}></PrayerOverlay>
 						</View>
 					</View>
-					<View style={styles.thursdayColumn}>
+					<View style={styles.weekColumn}>
 						<View>
-							<Text>T</Text>
+							<Text style={styles.weekDay}>T</Text>
+							<PrayerOverlay style={styles.dayButton}></PrayerOverlay>
+							<PrayerOverlay style={styles.dayButton}></PrayerOverlay>
+							<PrayerOverlay style={styles.dayButton}></PrayerOverlay>
+							<PrayerOverlay style={styles.dayButton}></PrayerOverlay>
 						</View>
 					</View>
-					<View style={styles.fridayColumn}>
+					<View style={styles.weekColumn}>
 						<View>
-							<Text>F</Text>
+							<Text style={styles.weekDay}>F</Text>
+							<PrayerOverlay style={styles.dayButton}></PrayerOverlay>
+							<PrayerOverlay style={styles.dayButton}></PrayerOverlay>
+							<PrayerOverlay style={styles.dayButton}></PrayerOverlay>
+							<PrayerOverlay style={styles.dayButton}></PrayerOverlay>
 						</View>
 					</View>
-					<View style={styles.saturdayColumn}>
+					<View style={styles.weekColumn}>
 						<View>
-							<Text>S</Text>
+							<Text style={styles.weekDay}>S</Text>
+							<PrayerOverlay style={styles.dayButton}></PrayerOverlay>
+							<PrayerOverlay style={styles.dayButton}></PrayerOverlay>
+							<PrayerOverlay style={styles.dayButton}></PrayerOverlay>
+							<PrayerOverlay style={styles.dayButton}></PrayerOverlay>
 						</View>
 					</View>
 				</View>
@@ -111,7 +140,7 @@ const styles = StyleSheet.create({
 	},
 
 	calendarView: {
-		width: '80%',
+		width: '100%',
 		gap: 20,
 		display: 'flex',
 		flexDirection: 'row',
@@ -130,11 +159,23 @@ const styles = StyleSheet.create({
 	engMonth: {
 		fontSize: 30,
 		color: 'white',
+		fontWeight: 'bold',
 	},
 
 	arabMonth: {
 		fontSize: 15,
 		color: 'white',
+		fontWeight: 'bold',
 	},
+	weekColumn: {
+
+	},
+	dayButton: {
+	},
+	weekDay: {
+		color: 'white',
+		fontWeight: 'bold',
+		fontSize: 20,
+	}
 });
 
