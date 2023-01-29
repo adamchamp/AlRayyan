@@ -7,7 +7,7 @@ import CustomIcon from '../components';
 
 
 
-export const NotificationButton = () => {
+export const NotificationButton = (props) => {
 	//Contexts: For the current prayer have a context to set colors
 	//States: For finding current states have a context to retrieve/ set state
 
@@ -15,8 +15,8 @@ export const NotificationButton = () => {
 	let activeColors = colors[theme.mode];
 
 	return (
-			<View style={[{backgroundColor: activeColors.primary}, styles.container]}>
-				<CustomIcon name={'notificationIcon_Enabled'} size={24} color={'white'}/>
+			<View style={[{backgroundColor: props.backgroundColor}, styles.container]}>
+				<CustomIcon name={'notificationIcon_Enabled'} size={24} color={props.iconColor}/>
 			</View>
 			);
 };

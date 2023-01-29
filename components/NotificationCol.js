@@ -15,12 +15,12 @@ export const NotificationCol = () => {
 	let activeColors = colors[theme.mode];
 
 	//Data for rows
-	const fajr = [<NotificationButton/>];
-	const sunrise = [<NotificationButton/>];
-	const zuhur = [<NotificationButton/>];
-	const asr = [<NotificationButton/>];
-	const maghrib = [<NotificationButton/>];
-	const ishaa = [<NotificationButton/>];
+	const fajr = [<NotificationButton backgroundColor={activeColors.primary80} iconColor={activeColors.white}/>];
+	const sunrise = [<NotificationButton backgroundColor={activeColors.primary80} iconColor={activeColors.white}/>];
+	const zuhur = [<NotificationButton backgroundColor={activeColors.primary80} iconColor={activeColors.white}/>];
+	const asr = [<NotificationButton backgroundColor={activeColors.primary80} iconColor={activeColors.white}/>];
+	const maghrib = [<NotificationButton backgroundColor={activeColors.primary80} iconColor={activeColors.white}/>];
+	const ishaa = [<NotificationButton backgroundColor={activeColors.primary80} iconColor={activeColors.white}/>];
 
 
 	return (

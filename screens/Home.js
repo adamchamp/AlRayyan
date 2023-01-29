@@ -23,7 +23,7 @@ const Home = ({navigation}) => {
 					</View>
 
 
-					<View style={[{backgroundColor: activeColors.white}, styles.dateHeader]}>
+					<View style={[{backgroundColor: activeColors.white80}, styles.dateHeader]}>
 						<View style={styles.dates}>
 							<Text style={[{color: activeColors.primary}, styles.dateText1]}>
 							October 10th, 2022
@@ -33,7 +33,7 @@ const Home = ({navigation}) => {
 							</Text>
 						</View>
 
-						<View style={[{backgroundColor: activeColors.primary}, styles.timeNext]}>
+						<View style={[{backgroundColor: activeColors.primary80}, styles.timeNext]}>
 							<Text style={[{color: activeColors.white}, styles.timeNextText1]}>1:25</Text>
 							<Text style={[{color: activeColors.white}, styles.timeNextText2]}>Till asr</Text>
 						</View>
@@ -46,7 +46,7 @@ const Home = ({navigation}) => {
 						</View>
 
 						<View style={styles.notificationTableContainer}>
-							<NotificationButton/>
+							<NotificationButton backgroundColor={activeColors.white} iconColor={activeColors.primary}/>
 						</View>
 					</View>
 				</ImageBackground>
@@ -102,6 +102,7 @@ const styles = StyleSheet.create({
 				justifyContent: 'center',
 				alignItems: 'center',
 				alignSelf: 'center'
+
 			},
 	dates:
 			{
