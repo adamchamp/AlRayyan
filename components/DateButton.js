@@ -21,16 +21,18 @@ export const DateButton = ({date}) => {
 
 const styles = StyleSheet.create({
 	dateButton: {
-		alignSelf: 'center',
-		alignItems: 'center',
 		justifyContent: 'center',
-		width: 45,
-		height: 45,
+		alignItems: 'center',
+		alignSelf: 'center',
+		width: '90%',
+		aspectRatio: 1 / 1,
 		borderWidth: 0,
-		borderRadius: 15,
+		borderRadius: 15
 	},
 	dateButtonText: {
 		fontSize: 17,
-		textAlign: 'center'
+		justifyContent: 'center',
+		alignItems: 'center',
+		alignSelf: 'center'
 	}
 });

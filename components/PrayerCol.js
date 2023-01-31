@@ -35,6 +35,7 @@ export const PrayerCol = () => {
 		<IqaamaTime time="1:00" color={activeColors.primary80} textColor={activeColors.white}/>];
 
 
+
 	return (
 			<View style={styles.container}>
 				<Row data={fajr} style={styles.rows}/>

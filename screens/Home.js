@@ -44,7 +44,7 @@ const Home = ({navigation}) => {
 						<View style={styles.prayerTableContainer}>
 							<PrayerHeader/>
 						</View>
-
+			
 						<View style={styles.notificationTableContainer}>
 							<NotificationButton backgroundColor={activeColors.white} iconColor={activeColors.primary}/>
 						</View>
