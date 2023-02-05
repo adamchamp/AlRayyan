@@ -5,12 +5,15 @@ import {ThemeContext} from '../contexts/ThemeContext';
 import {colors} from '../config/theme';
 
 
-export const PrayerTimeOverlay = ({visible, onPress}) => {
+export const NotificationEnableSettingsButton = ({date}) => {
 	const {theme} = useContext(ThemeContext);
 	let activeColors = colors[theme.mode];
-	return (
-			<View>
 
+	return (
+			<View style = {styles.container}>
+				<TouchableOpacity  style={[{backgroundColor: activeColors.primary}, styles.dateButton]}>
+					<Text style={[{color: activeColors.white}, styles.dateButtonText]}>{date}</Text>
+				</TouchableOpacity>
 			</View>
 			);
 };
@@ -18,6 +21,10 @@ export const PrayerTimeOverlay = ({visible, onPress}) => {
 
 const styles = StyleSheet.create({
 	container: {
+
+	},
+
+	dateButton: {
 		justifyContent: 'center',
 		alignItems: 'center',
 		alignSelf: 'center',
@@ -33,4 +40,3 @@ const styles = StyleSheet.create({
 		alignSelf: 'center'
 	}
 });
-

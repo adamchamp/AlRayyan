@@ -2,37 +2,56 @@ import React, {useState, useContext} from "react";
 import {ThemeContext} from '../contexts/ThemeContext';
 import {StyleSheet, Text, TouchableOpacity, View, Image, Dimensions} from 'react-native';
 import {colors} from '../config/theme';
-import{LogoHeader, PrayerOverlay, DateButton} from '../components';
+import{LogoHeader, PrayerTimeOverlay, DateButton, EmptyDateButton, PrayerCol, PrayerHeader} from '../components';
 import {functions, getPrayerTimes} from "../functions.js";
 import {ROUTES} from '../config';
+import {Overlay} from 'react-native-elements';
 import { Table, Row, Rows } from 'react-native-table-component';
-const window = Dimensions.get("window");
-const screen = Dimensions.get("screen");
+
+
 
 
 //Function to gen date elements
 function calendarDays()
 {
 	//Retrive number of days in month
-	var data = new Array();
-	for (var i = 1; i <= 7; i++)
+	var data = new Array(7);
+
+
+	for (var i = 0; i < 7; i++)
 	{
-		data[i] = <DateButton date={i}/>;
+		data[i] = new Array(7);
 	}
+
+
+	for (var i = 0; i < 7; i++)
+	{
+		for (var j = 0; j < 7; j++)
+		{
+			if (j < 2 && i < 1)
+				data[i][j] = <EmptyDateButton/>;
+			else
+				data[i][j] = <DateButton date={j}/>;
+		}
+	}
+
 
 
 	return(data);
 }
 
+
 const Calendar = () => {
 //Setting the theme and colors
 	const {theme} = useContext(ThemeContext);
 	let activeColors = colors[theme.mode];
-	//Get API code
-	let text = getPrayerTimes();
+
 	//Calendar Content
 	const dayNames = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
 	let calendarData = calendarDays();
+
+
+
 	return (
 			<View style={[{backgroundColor: activeColors.background}, styles.container]}>
 				<View style = {styles.logoHeader}>
@@ -60,15 +79,14 @@ const Calendar = () => {
 
 					<View style={[{backgroundColor: activeColors.primary50}, styles.calendar]}>
 						<Row data={dayNames} textStyle={[{color: activeColors.white}, styles.calendarHeaderText]}/>
-						<Row data={calendarData} style={styles.calendarButton}/>
-						<Row data={calendarData} style={styles.calendarButton}/>
-						<Row data={calendarData} style={styles.calendarButton}/>
-						<Row data={calendarData} style={styles.calendarButton}/>
-						<Row data={calendarData} style={styles.calendarButton}/>
+						<Row data={calendarData[0]} style={styles.calendarButton}/>
+						<Row data={calendarData[1]} style={styles.calendarButton}/>
+						<Row data={calendarData[2]} style={styles.calendarButton}/>
+						<Row data={calendarData[3]} style={styles.calendarButton}/>
+						<Row data={calendarData[4]} style={styles.calendarButton}/>
+						<Row data={calendarData[5]} style={styles.calendarButton}/>
 					</View>
 				</View>
-
-
 			</View>
 			);
 };
@@ -79,7 +97,7 @@ const styles = StyleSheet.create({
 		height: '100%'
 	},
 	logoHeader: {
-		paddingBottom: 50
+		paddingBottom: 30
 	},
 	content: {
 
@@ -96,7 +114,7 @@ const styles = StyleSheet.create({
 		justifyContent: 'space-between',
 		alignSelf: 'center',
 		alignContent: 'center',
-		marginBottom: 40
+		marginBottom: 30
 
 	},
 	headerButton: {
@@ -128,6 +146,5 @@ const styles = StyleSheet.create({
 	calendarButton: {
 		paddingTop: 10
 	}
-
 });
 

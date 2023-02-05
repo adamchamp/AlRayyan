@@ -18,10 +18,10 @@ export const PrayerOverlay = ({date}) => {
 
 	return (
 			<View>
-				<Button style={styles.overlayButton} title="1" onPress={toggleOverlay} />
+				<Button style={styles.overlayButton} title={'1'} onPress={toggleOverlay} />
 				<Overlay isVisible={visible} onBackdropPress={toggleOverlay}>
-						<View>
-							<View style={styles.monthView}>
+					<View>
+						<View style={styles.monthView}>
 							<View style={{alignItems: 'center'}}>
 								<Text style={styles.engMonth}>October2022</Text>
 								<Text style={styles.arabMonth}>RabiAlAwwal1444</Text>
@@ -43,12 +43,12 @@ export const PrayerOverlay = ({date}) => {
 				</Overlay>
 			</View>
 			);
-}
+};
 
 
 const styles = StyleSheet.create({
 	overlayButton: {
-		borderRadius: 30,
+		borderRadius: 30
 	},
 	monthView: {
 		display: 'flex',
@@ -58,16 +58,16 @@ const styles = StyleSheet.create({
 		paddingLeft: 15,
 		paddingRight: 15,
 		borderRadius: 30,
-		backgroundColor: '#3365a6',
+		backgroundColor: '#3365a6'
 	},
 	engMonth: {
 		fontSize: 30,
-		color: 'white',
+		color: 'white'
 	},
 
 	arabMonth: {
 		fontSize: 15,
-		color: 'white',
+		color: 'white'
 	},
 	prayerHeader: {
 		width: '100%',
@@ -86,5 +86,5 @@ const styles = StyleSheet.create({
 	},
 	prayerTableContainer: {
 		width: '80%'
-	},
+	}
 });

@@ -5,19 +5,21 @@ import {ThemeContext} from '../contexts/ThemeContext';
 import {colors} from '../config/theme';
 
 
-export const PrayerTimeOverlay = ({visible, onPress}) => {
+
+export const EmptyDateButton = () => {
 	const {theme} = useContext(ThemeContext);
 	let activeColors = colors[theme.mode];
 	return (
 			<View>
-
+				<View  style={styles.dateButton}>
+				</View>
 			</View>
 			);
-};
+}
 
 
 const styles = StyleSheet.create({
-	container: {
+	dateButton: {
 		justifyContent: 'center',
 		alignItems: 'center',
 		alignSelf: 'center',
@@ -33,4 +35,3 @@ const styles = StyleSheet.create({
 		alignSelf: 'center'
 	}
 });
-
