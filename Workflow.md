@@ -23,6 +23,10 @@ With a medium/large project such as ListLNK, it's important to make sure that on
 8. Resolve any merge conflicts if any arise.
 9. Create a Pull Request (PR) on GitHub. (use the template provided below)
     > Ensure that your PR includes a summary of exactly what you did in this task. Refer to the "Files Changed" and "Commits" tabs on GitHub to remember the details. **If you made any UI changes, make sure to include 'Before' and 'After' screenshots.**
+10. Please avoid having any of the following in your PR
+    - Debug code, output to console or on screen
+    - Commented code or unnecessary comments such as those comments to remind you of something during the implementation and not needed any more
+    - Unnecessary changes to some other parts in the code which is not related to the task on hand
 
 <em>Please use the following PR Template:</em>
 
